@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lumino - Tables</title>
+<title>PP - Clientes</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
@@ -31,16 +31,6 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#"><span>PROJETO</span>Papaiz</a>
-				<ul class="user-menu">
-					<li class="dropdown pull-right">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
-							<li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>
-							<li><a href="#"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
-						</ul>
-					</li>
-				</ul>
 			</div>
 							
 		</div><!-- /.container-fluid -->
@@ -83,16 +73,31 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<table data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
-						    <thead>
-						    <tr>
-						        <th data-field="state" data-checkbox="true" >Item ID</th>
-						        <th data-field="id" data-sortable="true">Código</th>
-						        <th data-field="name"  data-sortable="true">Nome</th>
-						        <th data-field="phones" data-sortable="true">Telefones</th>
-						        <th data-field="city" data-sortable="true">Cidade</th>
-						        <th data-field="state" data-sortable="true">Estado</th>
-						    </tr>
+                        <form class="form-inline" style="float:left; margin-top: 10px;">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Cadastrar Cliente</button>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Procurar">
+                            </div>
+                            <div class="form-group">
+                                <label for="opcoes">Período: </label>
+                            </div>
+                            <select class="form-control" id="opcoes">
+                                <option>de 01/01 a 01/02</option>
+                                <option>de 02/02 a 02/03</option>
+                                <option>de 03/03 a 03/04</option>
+                                <option>de 04/04 a 04/05</option>
+                            </select>
+                        </form>
+                        <table data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                            <thead>
+						        <tr>
+						            <th data-field="id" data-sortable="true">Código</th>
+						            <th data-field="name"  data-sortable="true">Nome</th>
+						            <th data-field="phones" data-sortable="true">Telefones</th>
+						            <th data-field="city" data-sortable="true">Cidade</th>
+						            <th data-field="state" data-sortable="true">Estado</th>
+                                    <th data-field="actions">Ações</th>
+						        </tr>
 						    </thead>
 						</table>
 					</div>
@@ -102,7 +107,6 @@
 		<row class="container">
             <!-- Trigger the modal with a button -->
             <div style="width:auto;" class="row-lg-2">
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Inserir</button>
                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Atualizar</button>
                 <button type="button" class="btn btn-info btn-lg">Remover</button>
             </div>
@@ -115,10 +119,70 @@
                             <h4 class="modal-title">Novo Cliente</h4>
                         </div>
                         <div class="modal-body">
-                            <p>Inserir um cliente</p>
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="inputName" class="col-sm-2 control-label">Nome: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputName" placeholder="Nome">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPhone" class="col-sm-2 control-label">Telefone: </label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="inputPhone" placeholder="Telefone">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="selectCity" class="col-sm-2 control-label">Cidade: </label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="selectCity">
+                                            <option>1</option>
+                                            <option>1</option>
+                                            <option>1</option>
+                                            <option>1</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="selectState" class="col-sm-2 control-label">Estado: </label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="selectState">
+                                            <option>1</option>
+                                            <option>1</option>
+                                            <option>1</option>
+                                            <option>1</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="insertAddress" class="col-sm-2 control-label">Endereço: </label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="insertAddress" placeholder="Endereço">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="radioCPF" value="option1"> CPF
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="radioCNPJ" value="option2"> CNPJ
+                                    </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="CPF/CNPJ">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    </div>
+                                </div>                                
+                                
+                            </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                         </div>
                     </div>
                 </div>
