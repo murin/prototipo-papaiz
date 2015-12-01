@@ -21,7 +21,16 @@
 
 <style>
     tr{
-      -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none;  
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;  
+    }
+    .ativo
+    {
+        background-color: #00F;
+        color: white;
     }
 </style>
 
@@ -281,8 +290,8 @@
         </row><!--/.row-->
 						<script>
 						    $("#mytable > tbody > tr").on("click", function(e) {
-						        $(this).siblings().removeClass("info");
-						        $(this).toggleClass("info");
+						        $(this).siblings().removeClass("ativo");
+						        $(this).toggleClass("ativo");
 						    });
 						    $(function () {
 						        $('#hover, #striped, #condensed').click(function () {
