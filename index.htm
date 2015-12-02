@@ -36,23 +36,28 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 		
-	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-		<form role="search">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Procurar">
-			</div>
-		</form>
-		<ul class="nav menu">
-			<li><a class="active" href="index.htm"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Início</a></li>
-			<li><a href="clientes.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Clientes</a></li>
-			<li><a href="funcionarios.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Funcionários</a></li>
-			<li><a href="fornecedores.html"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Fornecedores</a></li>
-			<li><a href="produtos.html"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Produtos</a></li>
-			<li><a href="compras.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Compras</a></li>
-			<li><a href="vendas.html"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Vendas</a></li>
-		</ul>
+    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+        <form role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Procurar">
+            </div>
+        </form>
+        <ul class="nav menu">
+            <li><a href="index.htm"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Início</a></li>
+            <li><a href="clientes.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Clientes</a></li>
+            <li>
+                <a href="funcionarios.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Funcionários</a>
+                <ul style="list-style-type:none;">
+                    <li><a href="salarios.htm"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Salários</a></li>
+                </ul>
+            </li>
+            <li><a href="fornecedores.htm"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Fornecedores</a></li>
+            <li><a href="produtos.htm"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Produtos</a></li>
+            <li><a href="compras.htm"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Compras</a></li>
+            <li><a class="active" href="vendas.htm"><span class="glyphicon glyphicon-barcode" aria-hidden="true"></span> Vendas</a></li>
+        </ul>
 
-	</div><!--/.sidebar-->
+    </div><!--/.sidebar-->
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
@@ -61,11 +66,15 @@
 			</ol>
 		</div><!--/.row-->
 		
-		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">Início</h1>
-			</div>
-		</div><!--/.row-->
+        <div class="jumbotron">
+            <div style="width: 830px;"class="pull-left">
+                <h1>Olá, Papaiz!</h1>
+                <h2>O grupo Power Ranger Branco orgulhosamente apresenta...</h2>
+                <p>O <strong> Super Sistema Gerenciador de Finanças</strong>, que vai te ajudar a gerenciar melhor suas finanças (dããã), compras, vendas, seus clientes e fornecedores.</p>
+                <p>Clique em qualquer dos ítens do menu a esquerda e divirta-se!</p>
+            </div>
+            <img style="width: 200px; margin-top: 100px;" class="pull-left" src="img/ranger.png" />
+        </div>
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

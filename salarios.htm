@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PP - Clientes</title>
+<title>PP - Salários</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
@@ -39,40 +39,48 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 		
-    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-        <form role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Procurar">
-            </div>
-        </form>
-        <ul class="nav menu">
-            <li><a href="index.htm"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Início</a></li>
-            <li><a href="clientes.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Clientes</a></li>
-            <li>
-                <a href="funcionarios.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Funcionários</a>
-                <ul style="list-style-type:none;">
-                    <li><a href="salarios.htm"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Salários</a></li>
-                </ul>
-            </li>
-            <li><a href="fornecedores.htm"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Fornecedores</a></li>
-            <li><a href="produtos.htm"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Produtos</a></li>
-            <li><a href="compras.htm"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Compras</a></li>
-            <li><a class="active" href="vendas.htm"><span class="glyphicon glyphicon-barcode" aria-hidden="true"></span> Vendas</a></li>
-        </ul>
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		<form role="search" class="hide">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Procurar">
+			</div>
+		</form>
+        <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+            <form role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Procurar">
+                </div>
+            </form>
+            <ul class="nav menu">
+                <li><a href="index.htm"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Início</a></li>
+                <li><a href="clientes.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Clientes</a></li>
+                <li>
+                    <a href="funcionarios.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Funcionários</a>
+                    <ul style="list-style-type:none;">
+                        <li><a href="salarios.htm"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Salários</a></li>
+                    </ul>
+                </li>
+                <li><a href="fornecedores.htm"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Fornecedores</a></li>
+                <li><a href="produtos.htm"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Produtos</a></li>
+                <li><a href="compras.htm"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Compras</a></li>
+                <li><a class="active" href="vendas.htm"><span class="glyphicon glyphicon-barcode" aria-hidden="true"></span> Vendas</a></li>
+            </ul>
 
-    </div><!--/.sidebar-->
+        </div>
+
+	</div><!--/.sidebar-->
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="index.htm"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
-				<li class="active">Clientes</li>
+				<li class="active">Salários</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Clientes</h1>
+				<h1 class="page-header">Salários</h1>
 			</div>
 		</div><!--/.row-->
 				
@@ -83,7 +91,7 @@
 					<div class="panel-body">
                         <form class="form-inline" style="float:left; margin-top: 10px;">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
-                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Cadastrar Cliente
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Cadastrar Salário
 			                </button>
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Cliente...">
@@ -92,20 +100,16 @@
                         <table id="mytable" data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
                             <thead>
 						        <tr>
-						            <th data-field="id" data-sortable="true">Código</th>
-						            <th data-field="name"  data-sortable="true">Nome</th>
-						            <th data-field="phones" data-sortable="true">Telefone(s)</th>
-						            <th data-field="city" data-sortable="true">Cidade</th>
-						            <th data-field="state" data-sortable="true">Estado</th>
+						            <th data-field="id" data-sortable="true">Data</th>
+						            <th data-field="name"  data-sortable="true">Mês/Ano Referência</th>
+						            <th data-field="phones" data-sortable="true">Valor Pago</th>
                                     <th data-field="actions">Ações</th>
 						        </tr>
 						    </thead>
 						    <tbody>
-						        <td>1</td>
-						        <td>Lucas</td>
-						        <td>84 9999-9999</td>
-						        <td>Natal</td>
-						        <td>RN</td>
+						        <td>99/99/9999</td>
+						        <td>99/9999</td>
+						        <td>Vintchi Reaish</td>
 						        <td>
 								    <a class="btn btn-default btn-xs" href="#" role="button">
 									    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -124,16 +128,12 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="form-group">
-                                    <label>Endereço:  </label>
-                                    <label>Rua Aracati, 13</label>
+                                    <label>Valor dos Pagamentos Feitos:  </label>
+                                    <label>R$ 9000,00</label>
                                 </div>
                                 <div class="form-group">
-                                    <label>CPF/CNPJ: </label>
-                                    <label class="">000.000.000-00</label>
-                                </div>
-                                <div class="form-group">
-                                    <label>Email: </label>
-                                    <label>bolota@exemplo.com</label>
+                                    <label>Valor Devido </label>
+                                    <label>R$ 1200,00</label>
                                 </div>
                             </div>
                         </div>
@@ -148,26 +148,26 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Editar Cliente</h4>
+                            <h4 class="modal-title">Editar Salário</h4>
                         </div>
                         <div class="modal-body">
                             <form class="form-horizontal">
                                 <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Nome: </label>
+                                    <label for="inputName" class="col-sm-2 control-label">Funcionário: </label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="inputName" placeholder="Nome">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputPhone" class="col-sm-2 control-label">Telefone: </label>
+                                    <label for="inputPhone" class="col-sm-2 control-label">Data: </label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" id="inputPhone" placeholder="Telefone">
+                                        <input type="date" class="form-control" id="inputDate">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="selectCity" class="col-sm-2 control-label">Cidade: </label>
+                                    <label for="selectM" class="col-sm-2 control-label">Mês: </label>
                                     <div class="col-sm-10">
-                                        <select class="form-control" id="selectCity">
+                                        <select class="form-control" id="selectM">
                                             <option>1</option>
                                             <option>1</option>
                                             <option>1</option>
@@ -176,9 +176,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="selectState" class="col-sm-2 control-label">Estado: </label>
+                                    <label for="selectA" class="col-sm-2 control-label">Ano: </label>
                                     <div class="col-sm-10">
-                                        <select class="form-control" id="selectState">
+                                        <select class="form-control" id="selectA">
                                             <option>1</option>
                                             <option>1</option>
                                             <option>1</option>
@@ -187,31 +187,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="optionCPF" class="col-sm-2 control-label">
-                                        <input type="radio" name="optionsRadios" id="optionCPF" value="CPF"/> CPF: 
-                                    </label>
+                                    <label for="inputVP" class="col-sm-2 control-label">V. Pago: </label>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="insertCPF" placeholder="CPF">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="optionCNPJ" class="col-sm-2 control-label">
-                                        <input type="radio" name="optionsRadios" id="optionCNPJ" value="CNPJ"/>CNPJ: 
-                                    </label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="insertCNPJ" placeholder="CPF">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="insertAddress" class="col-sm-2 control-label">Endereço: </label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="insertAddress" placeholder="Endereço">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                        <input type="text" class="form-control" id="inputVP" placeholder="R$">
                                     </div>
                                 </div>      
                             </form>
@@ -230,26 +208,26 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Novo Cliente</h4>
+                            <h4 class="modal-title">Novo Salário</h4>
                         </div>
                         <div class="modal-body">
                             <form class="form-horizontal">
                                 <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Nome: </label>
+                                    <label for="inputName" class="col-sm-2 control-label">Funcionário: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Text1" placeholder="Nome">
+                                        <input type="text" class="form-control" id="inputName" placeholder="Nome">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputPhone" class="col-sm-2 control-label">Telefone: </label>
+                                    <label for="inputPhone" class="col-sm-2 control-label">Data: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Number1" placeholder="Telefone">
+                                        <input type="date" class="form-control" id="inputDate">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="selectCity" class="col-sm-2 control-label">Cidade: </label>
+                                    <label for="selectM" class="col-sm-2 control-label">Mês: </label>
                                     <div class="col-sm-10">
-                                        <select class="form-control" id="select1">
+                                        <select class="form-control" id="selectM">
                                             <option>1</option>
                                             <option>1</option>
                                             <option>1</option>
@@ -258,9 +236,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="selectState" class="col-sm-2 control-label">Estado: </label>
+                                    <label for="selectA" class="col-sm-2 control-label">Ano: </label>
                                     <div class="col-sm-10">
-                                        <select class="form-control" id="select2">
+                                        <select class="form-control" id="selectA">
                                             <option>1</option>
                                             <option>1</option>
                                             <option>1</option>
@@ -269,34 +247,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="insertAddress" class="col-sm-2 control-label">Endereço: </label>
+                                    <label for="inputVP" class="col-sm-2 control-label">V. Pago: </label>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="Email1" placeholder="Endereço">
+                                        <input type="text" class="form-control" id="inputVP" placeholder="R$">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="optionCPF" class="col-sm-2 control-label">
-                                        <input type="radio" name="optionsRadios" id="optionCPF" value="CPF" /> CPF:
-                                    </label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="insertCPF" placeholder="CPF">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="optionCNPJ" class="col-sm-2 control-label">
-                                        <input type="radio" name="optionsRadios" id="optionCNPJ" value="CNPJ" />CNPJ:
-                                    </label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="insertCNPJ" placeholder="CPF">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="Email2" placeholder="Email">
-                                    </div>
-                                </div>                                
-                                
                             </form>
                         </div>
                         <div class="modal-footer">
