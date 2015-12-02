@@ -932,9 +932,55 @@ h1.page-header {
 /*modificações nyl*/
 #botcad
 {margin-bottom: 10px;}
+#produtos
+{
 
+background-color: transparent;
 
+height: 210px;
 
+width: 160px;
+
+text-align: center;
+
+border-radius: 10px;
+
+border: solid #999999 1px;
+}
+#produtos:hover
+{
+	box-shadow: inset 0px 0px 10px #2377F1; 
+  border-radius: 20px;  
+}
+#centpro
+{
+
+height: 1000px;
+
+padding: 10px;
+}
+
+#imgpro{
+    height: 130px;
+    /* display: list-item; */
+    width: 90px;
+}
+#nomepro{
+display: inline-block;margin-top: 23px;cursor: pointer;}
+#carrinho{
+    margin-top: 180px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 30px;
+    cursor: pointer;
+}
+#quantcar{
+	text-align: center;
+	width:42px;}
+#cep{
+    width: 95px;
+    display: inline;
+}
 
 
 
