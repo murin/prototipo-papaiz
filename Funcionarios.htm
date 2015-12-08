@@ -40,20 +40,17 @@
 	</nav>
 		
     <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-        <form role="search">
+        <form class="hidden" role="search">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Procurar">
             </div>
         </form>
+        <br />
         <ul class="nav menu">
             <li><a href="index.htm"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Início</a></li>
             <li><a href="clientes.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Clientes</a></li>
-            <li>
-                <a href="funcionarios.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Funcionários</a>
-                <ul style="list-style-type:none;">
-                    <li><a href="salarios.htm"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Salários</a></li>
-                </ul>
-            </li>
+            <li><a href="funcionarios.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Funcionários</a></li>
+            <li><a href="salarios.htm"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Salários</a></li>
             <li><a href="fornecedores.htm"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Fornecedores</a></li>
             <li><a href="produtos.htm"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Produtos</a></li>
             <li><a href="compras.htm"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Compras</a></li>
@@ -85,11 +82,8 @@
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
                                 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Cadastrar Funcionário
 			                </button>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Funcionário...">
-                            </div>
                         </form>
-                        <table id="mytable" data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                        <table data-search="true" id="mytable" data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
                             <thead>
 						        <tr>
 						            <th data-field="id" data-sortable="true">Código</th>
@@ -148,7 +142,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Editar Cliente</h4>
+                            <h4 class="modal-title">Editar Funcionário</h4>
                         </div>
                         <div class="modal-body">
                             <form class="form-horizontal">

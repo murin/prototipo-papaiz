@@ -37,20 +37,17 @@
 	</nav>
 		
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-		<form role="search">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Procurar">
-			</div>
-		</form>
+		<form class="hidden" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Procurar">
+            </div>
+        </form>
+        <br />
 		<ul class="nav menu">
 			<li><a href="index.htm"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Início</a></li>
 			<li><a href="clientes.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Clientes</a></li>
-			<li>
-                <a href="funcionarios.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Funcionários</a>
-                <ul style="list-style-type:none;">
-                    <li><a href="salarios.htm"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Salários</a></li>
-                </ul>
-            </li>
+			<li><a href="funcionarios.htm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Funcionários</a></li>
+			<li><a href="salarios.htm"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Salários</a></li>
 			<li><a href="fornecedores.htm"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Fornecedores</a></li>
 			<li><a href="produtos.htm"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Produtos</a></li>
 			<li><a href="compras.htm"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Compras</a></li>
@@ -81,16 +78,13 @@
                         <form class="form-inline" style="float:left; margin-top: 10px;">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Cadastrar Venda</button>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Cliente...">
-                            </div>
-                            <div class="form-group">
                                 <label for="opcoesde">Período de </label>
                                 <input type="date" class="form-control" id="opcoesde">
                                 <label for="opcoesa">a</label>
                                 <input type="date" class="form-control" id="opçoesa">
                             </div>
                         </form>
-                        <table data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                        <table data-search="true" data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
                             <thead>
 						        <tr>
 						            <th data-field="id" data-sortable="true">Data</th>
@@ -109,7 +103,7 @@
                                     <a class="btn btn-default btn-xs" href="#" role="button">
                                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                                     </a>
-                                    <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal1" href="#" role="button">
+                                    <a class="btn btn-default btn-xs" data-toggle="modal" data-target="#modal2" role="button">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                     </a>
                                     <a class="btn btn-default btn-xs" href="#" role="button">
@@ -120,11 +114,14 @@
 						</table>
 					</div>
 					<div class="panel-footer">
-                        <table data-toggle="table" data-url="tables/data1.json">
+					<br />
+					    <form class="form-inline" style="float:left; margin-top: 10px;">
+                            <h4>Ítens Vendidos</h4>
+                        </form>
+                        <table data-search="true" data-toggle="table" data-url="tables/data1.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
                             <thead>
                                 <tr>
                                     <th data-field="id" data-sortable="true">Produto</th>
-                                    <th data-field="name" data-sortable="true">Cliente</th>
                                     <th data-field="weight" data-sortable="true">Peso</th>
                                     <th data-field="Price" data-sortable="true">Preço/kg</th>
                                     <th data-field="city" data-sortable="true">Valor Total</th>
@@ -132,7 +129,6 @@
                             </thead>
                             <tbody>
                                 <td>Doritos</td>
-                                <td>Lucas</td>
                                 <td>12,5kg</td>
                                 <td>R$ 200</td>
                                 <td>R$ 2500,00</td>
@@ -161,29 +157,53 @@
                         <div class="modal-body">
                             <form class="form-horizontal">
                                 <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Data: </label>
+                                    <label for="insertDate" class="col-sm-2 control-label">Data: </label>
                                     <div class="col-sm-10">
-                                        <input type="date" class="form-control" id="inputName">
+                                        <input type="date" class="form-control" id="inputDate">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Cliente: </label>
+                                    <label for="selectName" class="col-sm-2 control-label">Cliente: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputName" placeholder="Cliente">
+                                        <select class="form-control" id="selectName">
+                                            <option> ------ </option>
+                                            <option> Lucas </option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="insertAddress" class="col-sm-2 control-label">Desconto: </label>
+                                    <label for="selectProduct" class="col-sm-2 control-label">Produto: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="R$"/>
+                                        <select class="form-control" id="selectProduct">
+                                            <option> ------ </option>
+                                            <option> Doritos </option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail" class="col-sm-2 control-label">Valor Total: </label>
+                                    <label for="insertWeight" class="col-sm-2 control-label">Peso: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="R$"/>
+                                        <input type="text" class="form-control" id="insertWeight" placeholder="Kg">
                                     </div>
-                                </div>      
+                                </div> 
+                                <div class="form-group">
+                                    <label for="insertPrice" class="col-sm-2 control-label">Preço/kg: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="insertPrice" placeholder="R$"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="insertDiscount" class="col-sm-2 control-label">Desconto: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="insertDiscount" placeholder="R$"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="insertAll" class="col-sm-2 control-label">Valor Total: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="insertAll" placeholder="R$"/>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -205,27 +225,51 @@
                         <div class="modal-body">
                             <form class="form-horizontal">
                                 <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Data: </label>
+                                    <label for="insertDate2" class="col-sm-2 control-label">Data: </label>
                                     <div class="col-sm-10">
-                                        <input type="date" class="form-control" id="Date1">
+                                        <input type="date" class="form-control" id="inputDate2">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Cliente: </label>
+                                    <label for="selectName2" class="col-sm-2 control-label">Cliente: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Text1" placeholder="Cliente">
+                                        <select class="form-control" id="selectName2">
+                                            <option> ------ </option>
+                                            <option> Lucas </option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="insertAddress" class="col-sm-2 control-label">Desconto: </label>
+                                    <label for="selectProduct2" class="col-sm-2 control-label">Produto: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="R$"/>
+                                        <select class="form-control" id="selectProduct2">
+                                            <option> ------ </option>
+                                            <option> Doritos </option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail" class="col-sm-2 control-label">Valor Total: </label>
+                                    <label for="insertWeight2" class="col-sm-2 control-label">Peso: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="R$"/>
+                                        <input type="text" class="form-control" id="insertWeight2" placeholder="Kg">
+                                    </div>
+                                </div> 
+                                <div class="form-group">
+                                    <label for="insertPrice2" class="col-sm-2 control-label">Preço/kg: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="insertPrice2" placeholder="R$"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="insertDiscount2" class="col-sm-2 control-label">Desconto: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="insertDiscount2" placeholder="R$"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAll2" class="col-sm-2 control-label">Valor Total: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputAll2" placeholder="R$"/>
                                     </div>
                                 </div>      
                             </form>
