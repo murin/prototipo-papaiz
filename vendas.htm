@@ -32,10 +32,10 @@
 				</button>
 				<a class="navbar-brand" href="#"><span>PROJETO</span>Papaiz</a>
 			</div>
-							
+
 		</div><!-- /.container-fluid -->
 	</nav>
-		
+
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<form class="hidden" role="search">
             <div class="form-group">
@@ -55,22 +55,22 @@
 		</ul>
 
 	</div><!--/.sidebar-->
-		
-	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="index.htm"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
 				<li class="active">Vendas</li>
 			</ol>
 		</div><!--/.row-->
-		
+
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">Vendas</h1>
 			</div>
 		</div><!--/.row-->
-				
-		
+
+
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
@@ -171,11 +171,71 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group">
+								<div class="form-group" style="padding: 0 10px">
+									<table class="table" id="insertProdutos">
+										<thead>
+											<tr>
+												<th>Produto</th>
+												<th>Peso</th>
+												<th>Preço/kg</th>
+											</tr>
+										</thead>
+										<tfoot>
+											<tr>
+												<td colspan="4">
+													<a class="btn btn-primary add-row" href="#" role="button"  data-table-id="insertProdutos">
+														<span class="glyphicon glyphicon-plus" aria-hidden="true">
+													</a>
+												</td>
+											</tr>
+										</tfoot>
+										<tbody>
+											<tr>
+												<td>
+													<select class="form-control" id="selectProduct">
+			                                            <option> - </option>
+			                                            <option> Doritos </option>
+			                                        </select>
+												</td>
+												<td>
+													<input type="text" class="form-control" placeholder="0.00">
+												</td>
+												<td>
+													<input type="text" class="form-control" placeholder="0.00">
+												</td>
+												<td>
+													<a class="btn btn-default remove-row" href="#" role="button" data-table-id="insertProdutos">
+														<span class="glyphicon glyphicon-remove" aria-hidden="true">
+													</a>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<select class="form-control" id="selectProduct">
+			                                            <option> - </option>
+			                                            <option> Doritos </option>
+			                                        </select>
+												</td>
+												<td>
+													<input type="text" class="form-control" placeholder="0.00">
+												</td>
+												<td>
+													<input type="text" class="form-control" placeholder="0.00">
+												</td>
+												<td>
+													<a class="btn btn-default remove-row" href="#" role="button" data-table-id="insertProdutos">
+														<span class="glyphicon glyphicon-remove" aria-hidden="true">
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+                                <!-- <div class="form-group">
                                     <label for="selectProduct" class="col-sm-2 control-label">Produto: </label>
                                     <div class="col-sm-10">
                                         <select class="form-control" id="selectProduct">
-                                            <option> ------ </option>
+                                            <option> - </option>
                                             <option> Doritos </option>
                                         </select>
                                     </div>
@@ -185,25 +245,28 @@
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="insertWeight" placeholder="Kg">
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="form-group">
                                     <label for="insertPrice" class="col-sm-2 control-label">Preço/kg: </label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="insertPrice" placeholder="R$"/>
                                     </div>
-                                </div>
-                                <div class="form-group">
+                                </div>-->
+
+								<div class="form-group">
                                     <label for="insertDiscount" class="col-sm-2 control-label">Desconto: </label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="insertDiscount" placeholder="R$"/>
                                     </div>
                                 </div>
-                                <div class="form-group">
+
+								<div class="form-group">
                                     <label for="insertAll" class="col-sm-2 control-label">Valor Total: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="insertAll" placeholder="R$"/>
+                                        <input type="text" class="form-control" id="insertAll" placeholder="R$" disabled="disabled">
                                     </div>
                                 </div>
+
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -239,11 +302,71 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group">
+								<div class="form-group" style="padding: 0 10px">
+									<table class="table" id="editProdutos">
+										<thead>
+											<tr>
+												<th>Produto</th>
+												<th>Peso</th>
+												<th>Preço/kg</th>
+											</tr>
+										</thead>
+										<tfoot>
+											<tr>
+												<td colspan="4">
+													<a class="btn btn-primary add-row" href="#" role="button" data-table-id="editProdutos">
+														<span class="glyphicon glyphicon-plus" aria-hidden="true">
+													</a>
+												</td>
+											</tr>
+										</tfoot>
+										<tbody>
+											<tr>
+												<td>
+													<select class="form-control" id="selectProduct">
+			                                            <option> - </option>
+			                                            <option> Doritos </option>
+			                                        </select>
+												</td>
+												<td>
+													<input type="text" class="form-control" placeholder="0.00">
+												</td>
+												<td>
+													<input type="text" class="form-control" placeholder="0.00">
+												</td>
+												<td>
+													<a class="btn btn-default remove-row" href="#" role="button" data-table-id="editProdutos">
+														<span class="glyphicon glyphicon-remove" aria-hidden="true">
+													</a>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<select class="form-control" id="selectProduct">
+			                                            <option> - </option>
+			                                            <option> Doritos </option>
+			                                        </select>
+												</td>
+												<td>
+													<input type="text" class="form-control" placeholder="0.00">
+												</td>
+												<td>
+													<input type="text" class="form-control" placeholder="0.00">
+												</td>
+												<td>
+													<a class="btn btn-default remove-row" href="#" role="button" data-table-id="editProdutos">
+														<span class="glyphicon glyphicon-remove" aria-hidden="true">
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+                                <!-- <div class="form-group">
                                     <label for="selectProduct2" class="col-sm-2 control-label">Produto: </label>
                                     <div class="col-sm-10">
                                         <select class="form-control" id="selectProduct2">
-                                            <option> ------ </option>
+                                            <option> - </option>
                                             <option> Doritos </option>
                                         </select>
                                     </div>
@@ -253,25 +376,27 @@
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="insertWeight2" placeholder="Kg">
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="form-group">
                                     <label for="insertPrice2" class="col-sm-2 control-label">Preço/kg: </label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="insertPrice2" placeholder="R$"/>
                                     </div>
-                                </div>
+                                </div> -->
+
                                 <div class="form-group">
                                     <label for="insertDiscount2" class="col-sm-2 control-label">Desconto: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="insertDiscount2" placeholder="R$"/>
+                                        <input type="text" class="form-control" id="editDiscount" placeholder="R$ 0,00"/>
                                     </div>
                                 </div>
-                                <div class="form-group">
+
+								<div class="form-group">
                                     <label for="inputAll2" class="col-sm-2 control-label">Valor Total: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputAll2" placeholder="R$"/>
+                                        <input type="text" class="form-control" id="editAll" placeholder="R$ 0,00" disabled="disabled"/>
                                     </div>
-                                </div>      
+                                </div>
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -336,13 +461,14 @@
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
         </row><!--/.row-->
+
                         <script>
 						    $(function () {
 						        $('#hover, #striped, #condensed').click(function () {
 						            var classes = 'table';
-						
+
 						            if ($('#hover').prop('checked')) {
 						                classes += ' table-hover';
 						            }
@@ -356,10 +482,10 @@
 						                });
 						        });
 						    });
-						
+
 						    function rowStyle(row, index) {
 						        var classes = ['active', 'success', 'info', 'warning', 'danger'];
-						
+
 						        if (index % 2 === 0 && index / 2 < classes.length) {
 						            return {
 						                classes: classes[index / 2]
@@ -371,11 +497,11 @@
 					</div>
 				</div>
 			</div>
-		</div><!--/.row-->	
-		
-		
+		</div><!--/.row-->
+
+
 	</div><!--/.main-->
-    
+
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/chart.min.js"></script>
@@ -386,9 +512,9 @@
 	<script src="js/bootstrap-table.js"></script>
 	<script>
 		!function ($) {
-			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
-				$(this).find('em:first').toggleClass("glyphicon-minus");	  
-			}); 
+			$(document).on("click","ul.nav li.parent > a > span.icon", function(){
+				$(this).find('em:first').toggleClass("glyphicon-minus");
+			});
 			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
 		}(window.jQuery);
 
@@ -398,7 +524,26 @@
 		$(window).on('resize', function () {
 		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
 		})
-	</script>	
+	</script>
+
+	<script>
+		jQuery.fn.outerHTML = function() {
+		  return jQuery('<div />').append(this.eq(0).clone()).html();
+		};
+		var templateRowProduto = $('#insertProdutos tbody tr:first').outerHTML();
+		var removeRow = function() {
+			if($('#'+ $(this).data('table-id')+' tbody tr').length > 1)
+				$(this).parent().parent().remove();
+		};
+		$(function(){
+			$('.remove-row').click(removeRow);
+
+			$('.add-row').click(function(){
+				$('#'+ $(this).data('table-id') +' tbody').append(templateRowProduto);
+				$('#'+ $(this).data('table-id') +' tbody .remove-row:last').click(removeRow);
+			});
+		});
+	</script>
 </body>
 
 </html>
