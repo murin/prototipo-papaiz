@@ -84,14 +84,14 @@
                                 <input type="date" class="form-control" id="opçoesa">
                             </div>
                         </form>
-                        <table data-search="true" data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                        <table data-search="true" data-toggle="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-select-item-name="toolbar1" data-pagination="true">
                             <thead>
 						        <tr>
-						            <th data-field="id" data-sortable="true">Data</th>
-						            <th data-field="name"  data-sortable="true">Cliente</th>
-						            <th data-field="phones" data-sortable="true">Desconto</th>
-						            <th data-field="city" data-sortable="true">Valor Total</th>
-                                    <th data-field="actions">Ações</th>
+						            <th data-field="date" data-sortable="true">Data</th>
+						            <th data-sortable="true">Cliente</th>
+						            <th data-sortable="true">Desconto</th>
+						            <th data-sortable="true">Valor Total</th>
+                                    <th>Ações</th>
 						        </tr>
 						    </thead>
 						    <tbody>
@@ -118,7 +118,7 @@
 					    <form class="form-inline" style="float:left; margin-top: 10px;">
                             <h4>Ítens Vendidos</h4>
                         </form>
-                        <table data-search="true" data-toggle="table" data-url="tables/data1.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                        <table data-toggle="table">
                             <thead>
                                 <tr>
                                     <th data-field="id" data-sortable="true">Produto</th>
@@ -178,11 +178,12 @@
 												<th>Produto</th>
 												<th>Peso</th>
 												<th>Preço/kg</th>
+												<th>Valor Total</th>
 											</tr>
 										</thead>
 										<tfoot>
 											<tr>
-												<td colspan="4">
+												<td colspan="5">
 													<a class="btn btn-primary add-row" href="#" role="button"  data-table-id="insertProdutos">
 														<span class="glyphicon glyphicon-plus" aria-hidden="true">
 													</a>
@@ -192,7 +193,7 @@
 										<tbody>
 											<tr>
 												<td>
-													<select class="form-control" id="selectProduct">
+													<select class="form-control">
 			                                            <option> - </option>
 			                                            <option> Doritos </option>
 			                                        </select>
@@ -204,26 +205,10 @@
 													<input type="text" class="form-control" placeholder="0.00">
 												</td>
 												<td>
-													<a class="btn btn-default remove-row" href="#" role="button" data-table-id="insertProdutos">
-														<span class="glyphicon glyphicon-remove" aria-hidden="true">
-													</a>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<select class="form-control" id="selectProduct">
-			                                            <option> - </option>
-			                                            <option> Doritos </option>
-			                                        </select>
+													<input type="text" class="form-control valor-total" placeholder="0.00" disabled>
 												</td>
 												<td>
-													<input type="text" class="form-control" placeholder="0.00">
-												</td>
-												<td>
-													<input type="text" class="form-control" placeholder="0.00">
-												</td>
-												<td>
-													<a class="btn btn-default remove-row" href="#" role="button" data-table-id="insertProdutos">
+													<a class="btn btn-default remove-row" href="#" role="button">
 														<span class="glyphicon glyphicon-remove" aria-hidden="true">
 													</a>
 												</td>
@@ -231,27 +216,6 @@
 										</tbody>
 									</table>
 								</div>
-                                <!-- <div class="form-group">
-                                    <label for="selectProduct" class="col-sm-2 control-label">Produto: </label>
-                                    <div class="col-sm-10">
-                                        <select class="form-control" id="selectProduct">
-                                            <option> - </option>
-                                            <option> Doritos </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="insertWeight" class="col-sm-2 control-label">Peso: </label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="insertWeight" placeholder="Kg">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="insertPrice" class="col-sm-2 control-label">Preço/kg: </label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="insertPrice" placeholder="R$"/>
-                                    </div>
-                                </div>-->
 
 								<div class="form-group">
                                     <label for="insertDiscount" class="col-sm-2 control-label">Desconto: </label>
@@ -309,11 +273,12 @@
 												<th>Produto</th>
 												<th>Peso</th>
 												<th>Preço/kg</th>
+												<th>Valor Total</th>
 											</tr>
 										</thead>
 										<tfoot>
 											<tr>
-												<td colspan="4">
+												<td colspan="5">
 													<a class="btn btn-primary add-row" href="#" role="button" data-table-id="editProdutos">
 														<span class="glyphicon glyphicon-plus" aria-hidden="true">
 													</a>
@@ -323,7 +288,7 @@
 										<tbody>
 											<tr>
 												<td>
-													<select class="form-control" id="selectProduct">
+													<select class="form-control">
 			                                            <option> - </option>
 			                                            <option> Doritos </option>
 			                                        </select>
@@ -335,26 +300,10 @@
 													<input type="text" class="form-control" placeholder="0.00">
 												</td>
 												<td>
-													<a class="btn btn-default remove-row" href="#" role="button" data-table-id="editProdutos">
-														<span class="glyphicon glyphicon-remove" aria-hidden="true">
-													</a>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<select class="form-control" id="selectProduct">
-			                                            <option> - </option>
-			                                            <option> Doritos </option>
-			                                        </select>
+													<input type="text" class="form-control valor-total" placeholder="0.00" disabled>
 												</td>
 												<td>
-													<input type="text" class="form-control" placeholder="0.00">
-												</td>
-												<td>
-													<input type="text" class="form-control" placeholder="0.00">
-												</td>
-												<td>
-													<a class="btn btn-default remove-row" href="#" role="button" data-table-id="editProdutos">
+													<a class="btn btn-default remove-row" href="#" role="button">
 														<span class="glyphicon glyphicon-remove" aria-hidden="true">
 													</a>
 												</td>
@@ -362,27 +311,6 @@
 										</tbody>
 									</table>
 								</div>
-                                <!-- <div class="form-group">
-                                    <label for="selectProduct2" class="col-sm-2 control-label">Produto: </label>
-                                    <div class="col-sm-10">
-                                        <select class="form-control" id="selectProduct2">
-                                            <option> - </option>
-                                            <option> Doritos </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="insertWeight2" class="col-sm-2 control-label">Peso: </label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="insertWeight2" placeholder="Kg">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="insertPrice2" class="col-sm-2 control-label">Preço/kg: </label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="insertPrice2" placeholder="R$"/>
-                                    </div>
-                                </div> -->
 
                                 <div class="form-group">
                                     <label for="insertDiscount2" class="col-sm-2 control-label">Desconto: </label>
@@ -394,7 +322,7 @@
 								<div class="form-group">
                                     <label for="inputAll2" class="col-sm-2 control-label">Valor Total: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="editAll" placeholder="R$ 0,00" disabled="disabled"/>
+                                        <input type="text" class="form-control" id="editAll" placeholder="R$ 0,00" disabled>
                                     </div>
                                 </div>
                             </form>
@@ -530,12 +458,12 @@
 		jQuery.fn.outerHTML = function() {
 		  return jQuery('<div />').append(this.eq(0).clone()).html();
 		};
-		var templateRowProduto = $('#insertProdutos tbody tr:first').outerHTML();
-		var removeRow = function() {
-			if($('#'+ $(this).data('table-id')+' tbody tr').length > 1)
-				$(this).parent().parent().remove();
-		};
 		$(function(){
+			var templateRowProduto = $('#insertProdutos tbody tr:first').outerHTML();
+			var removeRow = function() {
+					$(this).parent().parent().remove();
+			};
+
 			$('.remove-row').click(removeRow);
 
 			$('.add-row').click(function(){
